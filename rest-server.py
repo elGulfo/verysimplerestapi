@@ -17,7 +17,7 @@ def version():
 @app.route('/very/simple/rest/api/v0.1/do/<command>', methods = ['GET', 'POST', 'PUT', 'DELETE'])
 def do_something(command):
     #do sth. fancy here
-    return jsonify( {'command': command, 'method': request.method} )
+    return jsonify( {'command': command, 'method': request.method, 'args': request.args} )
     
 if __name__ == '__main__':
     app.run(debug = True)
